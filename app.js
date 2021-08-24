@@ -25,7 +25,7 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import Placeholder from './custom-plugins/placeholder/placeholder';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -105,3 +105,6 @@ ClassicEditor.defaultConfig = {
   }
 };
 
+export default {
+	ClassicEditor
+};

@@ -29,7 +29,7 @@ export default class PlaceholderEditing extends Plugin {
             viewToModelPositionOutsideModelElement( this.editor.model, viewElement => viewElement.hasClass( 'placeholder' ) )
         );
         this.editor.config.define( 'placeholderConfig', {
-            types: [ 'date', 'first name', 'surname' ]
+            types: [ ]
         } );
     }
 
