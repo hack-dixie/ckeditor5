@@ -56,7 +56,6 @@ export default class PlaceholderEditing extends Plugin {
 
     _defineConverters() {
         const conversion = this.editor.conversion;
-
         conversion.for( 'upcast' ).elementToElement( {
             view: {
                 name: 'span',
@@ -64,8 +63,7 @@ export default class PlaceholderEditing extends Plugin {
             },
             model: ( viewElement, { writer: modelWriter } ) => {
                 // Extract the "name" from "{name}".
-                const name = viewElement.getChild( 0 ).data.slice( 1, -1 );
-
+                const name = viewElement.getChild( 0 ).data.slice( 2, -2 );
                 return modelWriter.createElement( 'placeholder', { name } );
             }
         } );
