@@ -105,6 +105,4 @@ ClassicEditor.defaultConfig = {
   }
 };
 
-export default {
-	ClassicEditor
-};
+export default ClassicEditor;
