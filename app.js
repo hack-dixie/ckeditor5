@@ -1,6 +1,8 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -32,6 +34,8 @@ ClassicEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
 	Autoformat,
+	FontSize,
+	FontColor,
 	Bold,
 	Italic,
 	BlockQuote,
@@ -64,6 +68,8 @@ ClassicEditor.defaultConfig = {
 			'|',
       'placeholder',
       '|',
+			'fontSize',
+			'fontColor',
 			'bold',
 			'italic',
 			'link',
@@ -102,7 +108,18 @@ ClassicEditor.defaultConfig = {
 	language: 'en',
   placeholderConfig: {
     types: [ ]
-  }
+  },
+	fontSize: {
+		options: [
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22
+		]
+	},
 };
 
 export default ClassicEditor;
