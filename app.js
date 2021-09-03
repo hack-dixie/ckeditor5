@@ -1,7 +1,7 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
-import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -25,6 +25,8 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';
+import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport';
 import Placeholder from './custom-plugins/placeholder/placeholder';
 
 class ClassicEditor extends ClassicEditorBase {}
@@ -34,7 +36,7 @@ ClassicEditor.builtinPlugins = [
 	Essentials,
 	UploadAdapter,
 	Autoformat,
-	FontSize,
+	Font,
 	FontColor,
 	Bold,
 	Italic,
@@ -57,6 +59,8 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
+	SourceEditing,
+	GeneralHtmlSupport,
   Placeholder
 ];
 
@@ -84,7 +88,9 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'sourceEditing'
 		]
 	},
 	image: {
@@ -120,6 +126,16 @@ ClassicEditor.defaultConfig = {
 				22
 		]
 	},
+	htmlSupport: {
+		allow: [
+			{
+				name: /.*/,
+				attributes: true,
+				classes: true,
+				styles: true
+			}
+		]
+	}
 };
 
 export default ClassicEditor;
