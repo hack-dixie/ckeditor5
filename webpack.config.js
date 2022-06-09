@@ -11,8 +11,14 @@ module.exports = {
 
     // https://webpack.js.org/configuration/output/
     output: {
-        path: path.resolve( __dirname, 'dist' ),
-        filename: 'bundle.js'
+        // The name under which the editor will be exported.
+        library: 'ClassicEditor',
+
+        path: path.resolve( __dirname, 'build' ),
+        filename: 'ckeditor.js',
+        libraryTarget: 'umd',
+        libraryExport: 'default'
+
     },
 
     module: {
